@@ -4,7 +4,7 @@ const typeParams = new URLSearchParams(window.location.search);
 const typeSearch = typeParams.get("type");
 
 const pokedex= document.getElementById("pokemonImagesConatiner");
-const pokemonSearchForm  = document.getElementById("pokemonFilters");
+const pokemonSearchInput = document.getElementById("pokemonNameInput");
 const  pokemonTypeFilter= document.getElementById("typeFilters");
 
 let pokemonArray = [];
@@ -38,15 +38,17 @@ const fetchPokemon = () => {
 
 fetchPokemon()
 
-pokemonSearchForm.addEventListener('input',(event)=>{
-    const filterPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()))
+
+pokemonSearchInput.addEventListener('input', (event) => {
+    const filterPokemon = pokemonArray.filter(pokemon => pokemon.name.includes(event.target.value.toLowerCase()));
+    pokemonImagesConatiner.innerHTML="";
     clearPokedex()
     createPokemonCards(filterPokemon)
-})
+});
 
 function clearPokedex(){
-    let section = document.querySelector('#pokedex');
-    section.innerHTML = ''
+    let section = document.querySelector('#pokemonImagesConatiner');
+    section.innerHTML = "";
 }
 
 function createPokemonCards(pokemons){
