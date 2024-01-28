@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon Project</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>GEEKSTERMON</h1>
-
-      <div class="formConatains">
-        <form action="" id="pokemonFilters">
-          <select name="" id="typeFilters">
-            <option value="">Types</option>
-          </select>
-          <input type="submit" value="Filter by Type" />
-          <button onclick="window.location.reload();">Reset</button>
-        </form>
-
-        <form action="" id="pokemonSearchType" method="GET">
-          <input type="text" placeholder="Enter Pokemon Name" id="pokemonNameInput" />
-      </form>
-      </div>
-
-      <div id="pokemonImagesConatiner"></div>
-    </div>
-
-    <script src="./app.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>GeeksterMon</title>
+       
+    </head>
+    <body>
+        <div class="container">
+            
+                <h1>GEKKSTERMON</h1>
+            
+            <div class="formConatins">
+                <form id="pokemon-type-filter">
+                    <select name="type" class="type-filter">
+                        <option value="">Types</option>
+                    </select>
+                    <input type="submit" value="Filter by Type"/>
+                    
+                    <button>Reset</button>
+                </form>
+                <form id="pokemon-search-form" class="" action="" method="GET">
+                    <input id="pokemon-search-input" type="text" name="" placeholder="Enter Pokémon Name"/>
+                </form>
+              </div>
+                <div id="pokedex">
+                </div>
+            </main>  
+        </div>
+        <script src="./app.js"></script>
+    </body>
 </html>
